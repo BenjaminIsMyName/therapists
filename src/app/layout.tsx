@@ -1,3 +1,4 @@
+import MySequence from '@/components/MySequence'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -19,6 +20,7 @@ export default function RootLayout({
                 dir="rtl"
                 className={`${inter.className} bg-gradient-to-b from-[#207EA2] to-[#9B2828] via-[#7844A0]`}
             >
+                <MySequence />
                 {children}
             </body>
         </html>
