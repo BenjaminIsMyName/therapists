@@ -5,7 +5,7 @@ export default function AdvantagesSection() {
     return (
         <Section>
             <div className="h-screen flex items-center justify-center text-white">
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 px-9">
                     <Advantage>
                         <svg
                             className="w-4 h-4"

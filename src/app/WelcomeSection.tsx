@@ -11,7 +11,7 @@ export default function WelcomeSection() {
                 <div>
                     <div className="flex gap-4 items-baseline justify-center">
                         <svg
-                            className="w-24 h-24 self-end"
+                            className="w-10 h-10 md:w-24 md:h-24 self-end"
                             xmlns="http://www.w3.org/2000/svg"
                             width="150"
                             height="150"
@@ -25,14 +25,14 @@ export default function WelcomeSection() {
                             />
                         </svg>
                         <h1
-                            className={`${notoSans.className} text-9xl text-center tracking-widest`}
+                            className={`${notoSans.className} text-4xl md:text-9xl text-center tracking-widest`}
                         >
                             רדילט
                         </h1>
                     </div>
                     <br />
                     <h2
-                        className={`${notoSansRegular.className} text-4xl text-center`}
+                        className={`${notoSansRegular.className} text-xl md:text-4xl text-center px-8`}
                     >
                         הביטוח הטוב ביותר שכסף יכול לקנות
                     </h2>
