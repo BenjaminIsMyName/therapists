@@ -14,8 +14,13 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en" className="snap-y snap-proximity">
-            <body className={inter.className}>{children}</body>
+        <html lang="he" dir="rtl">
+            <body
+                dir="rtl"
+                className={`${inter.className} bg-gradient-to-b from-[#207EA2] to-[#9B2828] via-[#7844A0]`}
+            >
+                {children}
+            </body>
         </html>
     )
 }
