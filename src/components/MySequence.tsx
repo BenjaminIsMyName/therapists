@@ -30,7 +30,7 @@ export default function MySequence() {
                 <ImageSequence
                     progress={scrollYProgress}
                     images={images}
-                    className="fixed inset-0 w-full h-full object-cover object-left-top md:scale-[2.5] origin-top-left z-[-1] opacity-25"
+                    className="fixed w-full h-screen object-cover object-left-top md:scale-[2.5] origin-top-left z-[-1] opacity-25"
                 />
             )}
         </motion.div>
