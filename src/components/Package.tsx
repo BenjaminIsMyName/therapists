@@ -19,7 +19,9 @@ export default function Package({ name }: { name: string }) {
                 {name}
             </span>
 
-            <span className="font-light text-sm">הצטרף כדי לקבל הצעת מחיר</span>
+            <span className="font-light text-sm absolute bottom-4">
+                הצטרף כדי לקבל הצעת מחיר
+            </span>
         </div>
     )
 }
