@@ -7,7 +7,7 @@ export default function PackagesSection() {
             <div className="h-screen flex items-center justify-center text-white">
                 <div className="flex gap-5 flex-col md:flex-row">
                     <Package name="חבילה בסיסית" />
-                    <Package name="חבילה סטנדרטית" />
+                    <Package name="חבילה רגילה" />
                     <Package name="חבילה מורחבת" />
                 </div>
             </div>
