@@ -10,3 +10,23 @@
 
 body {
 }
+
+@layer utilities {
+    .hole {
+        clip-path: polygon(
+            /* top right */ 100% 0%,
+            /* slightly to the left of the top-right corner */ 1% 0%,
+            /* top-left corner of the polygon */ 0% 100%,
+            /* bottom-right corner */ 100% 100%,
+            /* point between bottom-right and top-right */ 100% 99%,
+            /* point on the right side, in the middle */ 100% 50%,
+            /* going inside */ 65% 50%,
+            /* going down */ 65% 65%,
+            /* going deeper to the left */ 33% 65%,
+            /* going up */ 33% 35%,
+            /* going right */ 65% 35%,
+            /* repeating to close the shape */ 65% 50%,
+            /* repeating to close the shape */ 100% 55%
+        );
+    }
+}
