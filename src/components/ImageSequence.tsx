@@ -1,7 +1,5 @@
-import { CSSProperties, useCallback } from 'react'
+import { CSSProperties, useCallback, useEffect, useRef } from 'react'
 import { clamp, MotionValue, useMotionValueEvent } from 'framer-motion'
-import React, { useEffect, useRef } from 'react'
-
 interface ImageSequenceProps {
     progress: MotionValue<number>
     images: string[]
@@ -16,20 +14,18 @@ export default function ImageSequence({
     images,
     width,
     height,
-    style, // I removed the style prop from this component because className is enough imo
     className,
 }: ImageSequenceProps) {
-    const canvasRef = useRef<HTMLCanvasElement>(null)
+    const imageRef = useRef<HTMLImageElement>(null)
     const imgRefs = useRef<HTMLImageElement[]>([])
-    const contextRef = useRef<CanvasRenderingContext2D | null | undefined>(null)
     const frameRef = useRef<number>()
 
     const setFrame = useCallback(
         (rawFrame: number) => {
             const frame = clamp(0, images.length - 1, Math.floor(rawFrame))
-            if (frameRef.current !== frame && contextRef.current) {
+            if (frameRef.current !== frame && imageRef.current) {
                 frameRef.current = frame
-                contextRef.current.drawImage(imgRefs.current[frame], 0, 0)
+                imageRef.current.src = imgRefs.current[frame]?.src
             }
         },
         [images.length]
@@ -45,7 +41,6 @@ export default function ImageSequence({
     })
 
     useEffect(() => {
-        contextRef.current = canvasRef.current?.getContext('2d')
         imgRefs.current = images.map(src => {
             const img = new Image()
             img.src = src
@@ -56,15 +51,18 @@ export default function ImageSequence({
         }
 
         return () => {
-            imgRefs.current.forEach(img => img.remove()) // remove the images from the DOM
+            imgRefs.current.forEach(img => URL.revokeObjectURL(img.src)) // free memory
             frameRef.current = undefined
         }
     }, [images, setFrame])
 
     return (
-        <canvas
-            ref={canvasRef}
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+            ref={imageRef}
             className={className}
+            src={imgRefs.current[0]?.src ?? ''}
+            alt="Image Sequence"
             width={width}
             height={height}
         />
