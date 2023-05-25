@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react'
+import { CSSProperties, useCallback } from 'react'
 import { clamp, MotionValue, useMotionValueEvent } from 'framer-motion'
 import React, { useEffect, useRef } from 'react'
 
@@ -11,26 +11,29 @@ interface ImageSequenceProps {
     className?: string
 }
 
-const ImageSequence = ({
+export default function ImageSequence({
     progress,
     images,
     width,
     height,
     style, // I removed the style prop from this component because className is enough imo
     className,
-}: ImageSequenceProps) => {
+}: ImageSequenceProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null)
     const imgRefs = useRef<HTMLImageElement[]>([])
     const contextRef = useRef<CanvasRenderingContext2D | null | undefined>(null)
     const frameRef = useRef<number>()
 
-    const setFrame = (rawFrame: number) => {
-        const frame = clamp(0, images.length - 1, Math.floor(rawFrame))
-        if (frameRef.current !== frame && contextRef.current) {
-            frameRef.current = frame
-            contextRef.current.drawImage(imgRefs.current[frame], 0, 0)
-        }
-    }
+    const setFrame = useCallback(
+        (rawFrame: number) => {
+            const frame = clamp(0, images.length - 1, Math.floor(rawFrame))
+            if (frameRef.current !== frame && contextRef.current) {
+                frameRef.current = frame
+                contextRef.current.drawImage(imgRefs.current[frame], 0, 0)
+            }
+        },
+        [images.length]
+    )
 
     useMotionValueEvent(progress, 'change', val => {
         const frame = clamp(
@@ -51,7 +54,12 @@ const ImageSequence = ({
         imgRefs.current[0].onload = () => {
             setFrame(0)
         }
-    }, [])
+
+        return () => {
+            imgRefs.current.forEach(img => img.remove()) // remove the images from the DOM
+            frameRef.current = undefined
+        }
+    }, [images, setFrame])
 
     return (
         <canvas
@@ -62,5 +70,3 @@ const ImageSequence = ({
         />
     )
 }
-
-export default ImageSequence
