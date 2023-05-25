@@ -36,7 +36,7 @@ export default function MySequence() {
                     images={images}
                     height={height}
                     width={width}
-                    className="fixed inset-0 w-full h-full object-cover z-[-1] opacity-25"
+                    className="fixed inset-0 w-full h-full object-cover object-left-top md:scale-[2.5] origin-top-left z-[-1] opacity-25"
                 />
             )}
         </motion.div>
