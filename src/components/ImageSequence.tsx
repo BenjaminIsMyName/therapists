@@ -3,8 +3,6 @@ import { clamp, MotionValue, useMotionValueEvent } from 'framer-motion'
 interface ImageSequenceProps {
     progress: MotionValue<number>
     images: string[]
-    height: number
-    width: number
     style?: CSSProperties
     className?: string
 }
@@ -12,13 +10,11 @@ interface ImageSequenceProps {
 export default function ImageSequence({
     progress,
     images,
-    width,
-    height,
     className,
 }: ImageSequenceProps) {
     const imageRef = useRef<HTMLImageElement>(null)
     const imgRefs = useRef<HTMLImageElement[]>([])
-    const frameRef = useRef<number>()
+    const frameRef = useRef<number>() // the current frame that is being displayed
 
     const setFrame = useCallback(
         (rawFrame: number) => {
@@ -46,15 +42,25 @@ export default function ImageSequence({
             img.src = src
             return img
         })
-        imgRefs.current[0].onload = () => {
-            setFrame(0)
+
+        const frame = clamp(
+            0,
+            images.length - 1,
+            Math.floor(progress.get() * images.length)
+        )
+
+        imgRefs.current[frame].onload = () => {
+            // set the initial frame by checking the progress (scrollYProgress).
+            // it's not always 0, the user might have scrolled down a bit before the page loaded.
+            // or the user might have refreshed the page after scrolling (scroll position is automatically restored).
+            setFrame(frame)
         }
 
         return () => {
             imgRefs.current.forEach(img => URL.revokeObjectURL(img.src)) // free memory
             frameRef.current = undefined
         }
-    }, [images, setFrame])
+    }, [images, progress, setFrame]) // this should only run once as long as the images array doesn't change
 
     return (
         // eslint-disable-next-line @next/next/no-img-element
@@ -63,8 +69,6 @@ export default function ImageSequence({
             className={className}
             src={imgRefs.current[0]?.src ?? ''}
             alt="Image Sequence"
-            width={width}
-            height={height}
         />
     )
 }
