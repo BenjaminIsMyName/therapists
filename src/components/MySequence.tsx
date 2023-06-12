@@ -2,13 +2,11 @@
 
 import { useScroll } from 'framer-motion'
 import ImageSequence from './ImageSequence'
-import useLoaded from '@/hooks/useLoaded'
 import { motion } from 'framer-motion'
 import { useMemo } from 'react'
 
 export default function MySequence() {
     const { scrollYProgress } = useScroll()
-    const loaded = useLoaded()
 
     const images = useMemo(() => {
         const images = []
@@ -21,14 +19,12 @@ export default function MySequence() {
     }, [])
 
     return (
-        loaded && (
-            <ImageSequence
-                progress={scrollYProgress}
-                images={images}
-                // wrapperComponent={Wrapper}
-                className="fixed w-full h-screen object-cover object-left-top md:scale-[2.5] origin-top-left z-[-1] opacity-25"
-            />
-        )
+        <ImageSequence
+            progress={scrollYProgress}
+            images={images}
+            // wrapperComponent={Wrapper}
+            className="fixed w-full h-screen object-cover object-left-top md:scale-[2.5] origin-top-left z-[-1] opacity-25"
+        />
     )
 }
 
