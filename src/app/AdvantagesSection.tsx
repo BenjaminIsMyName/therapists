@@ -5,7 +5,7 @@ import { BsCheck2All } from 'react-icons/bs'
 export default function AdvantagesSection() {
     return (
         <Section>
-            <div className="h-screen flex items-center justify-center text-white flex-col gap-5">
+            <div className="min-h-screen flex items-center justify-center text-white flex-col gap-10">
                 <div className="text-5xl">טיפול ב...</div>
                 <div className="flex flex-col gap-4 px-9">
                     <Advantage>

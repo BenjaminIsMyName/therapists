@@ -4,7 +4,8 @@ import Section from '@/components/Section'
 export default function PackagesSection() {
     return (
         <Section>
-            <div className="h-screen flex items-center justify-center text-white">
+            <div className="min-h-screen flex flex-col gap-16 items-center justify-center text-white">
+                <div className="text-5xl">המלצות</div>
                 <div className="flex gap-5 flex-col md:flex-row">
                     <Package
                         name="ש.ג. באר שבע"

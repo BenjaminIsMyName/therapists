@@ -10,7 +10,7 @@ const solitreo = Rubik_Vinyl({ subsets: ['hebrew'], weight: '400' })
 export default function WelcomeSection() {
     return (
         <Section>
-            <div className="h-screen flex items-center justify-center text-white">
+            <div className="min-h-screen flex items-center justify-center text-white">
                 <div>
                     <div className="flex sm:gap-4 items-baseline justify-center">
                         <GiOnTarget className="w-10 h-10 md:w-24 md:h-24 self-end" />
