@@ -7,6 +7,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            screens: {
+                md: '910px', // override tailwind's default
+            },
             keyframes: {
                 'show-up': {
                     '0%': { opacity: '0' },
