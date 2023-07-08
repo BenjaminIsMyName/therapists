@@ -14,6 +14,10 @@ import {
     useScroll,
     motion,
 } from 'framer-motion'
+
+// To convert a video to a sequence of images you can use ffmpeg:
+//      ffmpeg -i "airpods.mp4" "frames/%04d.jpg"
+
 interface ImageSequenceProps {
     progress: MotionValue<number>
     images: string[]

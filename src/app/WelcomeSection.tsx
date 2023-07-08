@@ -27,14 +27,14 @@ export default function WelcomeSection() {
                         <h1
                             className={`${notoSans.className} text-4xl md:text-9xl text-center tracking-widest`}
                         >
-                            רדילט
+                            בריאות הנפש
                         </h1>
                     </div>
                     <br />
                     <h2
                         className={`${notoSansRegular.className} text-xl md:text-4xl text-center px-8`}
                     >
-                        הביטוח הטוב ביותר שכסף יכול לקנות
+                        מכון לטיפול בחרדות, דיכאון בעיות בזוגיות ועוד
                     </h2>
                 </div>
             </div>
