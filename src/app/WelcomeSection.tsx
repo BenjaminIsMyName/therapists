@@ -25,7 +25,7 @@ export default function WelcomeSection() {
                     </div>
                     <br />
                     <h2
-                        className={`${notoSansRegular.className} text-xl md:text-4xl text-end px-8`}
+                        className={`${notoSansRegular.className} text-xl md:text-4xl text-end`}
                     >
                         אפשר גם אחרת
                     </h2>
