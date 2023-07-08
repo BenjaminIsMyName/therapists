@@ -13,7 +13,7 @@ export default function Package({
         <div
             className={`w-52 h-52 flex flex-col gap-4 items-center justify-center ${notoSans.className}
             relative 
-            before:hole before:content-[''] before:bg-white/20 before:backdrop-blur-md 
+            before:content-[''] before:bg-white/20 before:backdrop-blur-md 
             before:absolute before:inset-0 before:z-[-1] before:rounded-2xl
             `}
         >

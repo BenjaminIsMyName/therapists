@@ -8,6 +8,7 @@ import PackagesSection from './PackagesSection'
 import ImageSequence from '@/components/ImageSequence'
 import { useMotionValue } from 'framer-motion'
 import MySequence from '@/components/MySequence'
+import TherapistsSection from './TherapistsSection'
 
 const notoSans = Noto_Sans({ subsets: ['latin'], weight: '900' })
 const notoSansRegular = Noto_Sans({ subsets: ['latin'], weight: '400' })
@@ -18,6 +19,7 @@ export default function Home() {
             <WelcomeSection />
             <AdvantagesSection />
             <PackagesSection />
+            <TherapistsSection />
             <Section>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere
                 consequuntur ut enim molestiae minus, beatae doloremque,

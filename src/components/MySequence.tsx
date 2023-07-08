@@ -23,7 +23,7 @@ export default function MySequence() {
             progress={scrollYProgress}
             images={images}
             // wrapperComponent={Wrapper}
-            className="fixed w-full h-screen object-cover object-left-top md:scale-[1] origin-top-left z-[-1] opacity-25"
+            className="fixed w-full h-screen object-cover object-center md:scale-[1] origin-top-left z-[-1] opacity-25"
         />
     )
 }

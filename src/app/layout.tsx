@@ -1,6 +1,7 @@
 import MySequence from '@/components/MySequence'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { MdWhatsapp } from 'react-icons/md'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,10 @@ export default function RootLayout({
                 dir="rtl"
                 className={`${inter.className} bg-gradient-to-b from-[#207EA2] to-[#9B2828] via-[#7844A0]`}
             >
+                <div className="bg-white/50 fixed left-4 top-4 h-9 w-44 flex gap-3 justify-center items-center">
+                    <MdWhatsapp />
+                    <span className="text-sm">058-578-0130</span>
+                </div>
                 <MySequence />
                 {children}
             </body>
