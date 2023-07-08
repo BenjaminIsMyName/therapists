@@ -20,18 +20,6 @@ export default function Home() {
             <AdvantagesSection />
             <PackagesSection />
             <TherapistsSection />
-            <Section>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere
-                consequuntur ut enim molestiae minus, beatae doloremque,
-                incidunt commodi voluptate eius sed, modi vitae reprehenderit!
-                Repudiandae nobis optio molestiae? Incidunt, architecto.
-            </Section>
-            <Section>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                asperiores voluptatibus explicabo quia deserunt id quos iste,
-                excepturi quo eos esse placeat repellat, corporis quidem,
-                tempora recusandae alias autem sapiente.
-            </Section>
         </>
     )
 }
