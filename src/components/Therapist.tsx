@@ -30,9 +30,12 @@ export default function Therapist({
             <span className="font-light text-sm absolute p-5 top-16">
                 {desc}
             </span>
-            <span className="block text-left absolute bottom-5 left-5">
+            <a
+                className="block text-left absolute bottom-5 left-5"
+                href={`tel:${phone}`}
+            >
                 {phone}
-            </span>
+            </a>
         </div>
     )
 }
