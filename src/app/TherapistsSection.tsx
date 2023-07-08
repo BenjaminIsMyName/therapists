@@ -6,7 +6,7 @@ export default function TherapistsSection() {
     return (
         <Section>
             <div className="min-h-screen flex flex-col gap-16 items-center justify-center text-white py-44 md:py-0">
-                <div className="text-5xl">המטפלים שלנו</div>
+                <div className="text-5xl text-center">המטפלים שלנו</div>
                 <div className="flex gap-5 flex-col md:flex-row">
                     <Therapist
                         name="ש.ג. באר שבע"

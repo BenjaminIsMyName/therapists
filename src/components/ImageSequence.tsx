@@ -109,25 +109,8 @@ export default function ImageSequence({
         }
     }, [getCurrentFrameIndex, images, setFrame]) // this should only run once as long as the images array doesn't change
 
-    // const TheImage = (
-    //     // eslint-disable-next-line @next/next/no-img-element
-    //     <img ref={imageRef} className={className} alt="Image Sequence" />
-    // )
-
-    // wrap the image with the wrapper component
-    // if (wrapperComponent) {
-    //     const WrapperComponent = wrapperComponent
-    //     return <WrapperComponent loadedAll>{image}</WrapperComponent>
-    // }
-
     return loadedAll ? (
-        <motion.img
-            ref={imageRef}
-            className={className}
-            alt="Image Sequence"
-            initial={{ filter: `opacity(0)` }}
-            animate={{ filter: `opacity(1)` }}
-            transition={{ duration: 10 }}
-        />
+        // eslint-disable-next-line @next/next/no-img-element
+        <img ref={imageRef} className={className} alt="Image Sequence" />
     ) : null
 }

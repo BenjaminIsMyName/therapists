@@ -23,26 +23,7 @@ export default function MySequence() {
             progress={scrollYProgress}
             images={images}
             // wrapperComponent={Wrapper}
-            className="fixed w-full h-screen object-cover object-center md:scale-[1] origin-top-left z-[-1] opacity-25"
+            className="fixed w-full h-screen object-cover object-center md:scale-[1] origin-top-left z-[-1] opacity-25 animate-show-up"
         />
     )
-}
-
-function Wrapper({
-    children,
-    loadedAll,
-}: {
-    children: React.ReactNode
-    loadedAll: boolean
-}) {
-    console.log('loadedAll', loadedAll)
-    return loadedAll ? (
-        <motion.div
-            initial={{ opacity: 0, zIndex: -1, position: 'fixed' }}
-            animate={{ opacity: 1, zIndex: -1, position: 'fixed' }}
-            transition={{ duration: 5 }}
-        >
-            {children}
-        </motion.div>
-    ) : null
 }
