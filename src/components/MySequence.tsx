@@ -24,7 +24,7 @@ export default function MySequence() {
 
     function isMobileDevice() {
         const mobileMaxWidth = 767 // Maximum width for mobile devices
-        return window.innerWidth <= mobileMaxWidth
+        return window ? window.innerWidth <= mobileMaxWidth : false
     }
 
     return (
