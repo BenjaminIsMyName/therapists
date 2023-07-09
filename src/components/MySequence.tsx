@@ -4,12 +4,22 @@ import { useScroll } from 'framer-motion'
 import ImageSequence from './ImageSequence'
 import { motion } from 'framer-motion'
 import { useMemo } from 'react'
+import useLoaded from '@/hooks/useLoaded'
 
 export default function MySequence() {
     const { scrollYProgress } = useScroll()
+    const loaded = useLoaded()
 
     const images = useMemo(() => {
-        const images = []
+        function isMobileDevice() {
+            const mobileMaxWidth = 767 // Maximum width for mobile devices
+            return loaded ? window.innerWidth <= mobileMaxWidth : false
+        }
+
+        const images: string[] = []
+
+        if (!loaded) return images
+
         for (let i = 1; i < 200; i++) {
             const numberOfDigits = i.toString().length
             const numberOfZeros = 4 - numberOfDigits
@@ -20,12 +30,7 @@ export default function MySequence() {
             )
         }
         return images
-    }, [])
-
-    function isMobileDevice() {
-        const mobileMaxWidth = 767 // Maximum width for mobile devices
-        return window ? window.innerWidth <= mobileMaxWidth : false
-    }
+    }, [loaded])
 
     return (
         <ImageSequence
