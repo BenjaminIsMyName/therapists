@@ -16,7 +16,7 @@ export default function Therapist({
             className={`w-52 h-52 ${notoSans.className}
         relative 
         before:hole-up before:content-[''] before:bg-white/20 before:backdrop-blur-md 
-        before:absolute before:inset-0 before:z-[-1] before:rounded-2xl
+        before:absolute before:inset-0 before:z-[-1] before:rounded-2xl animate-tilt
         `}
         >
             <span
