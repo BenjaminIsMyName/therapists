@@ -10,13 +10,22 @@ export default function MySequence() {
 
     const images = useMemo(() => {
         const images = []
-        for (let i = 1; i < 242; i++) {
+        for (let i = 1; i < 200; i++) {
             const numberOfDigits = i.toString().length
             const numberOfZeros = 4 - numberOfDigits
-            images.push(`/therapy/frames/${'0'.repeat(numberOfZeros)}${i}.jpg`)
+            images.push(
+                `/therapy/${
+                    isMobileDevice() ? 'mobile' : 'desktop'
+                }/${'0'.repeat(numberOfZeros)}${i}.jpg`
+            )
         }
         return images
     }, [])
+
+    function isMobileDevice() {
+        const mobileMaxWidth = 767 // Maximum width for mobile devices
+        return window.innerWidth <= mobileMaxWidth
+    }
 
     return (
         <ImageSequence

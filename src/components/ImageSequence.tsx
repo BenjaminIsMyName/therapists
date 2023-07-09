@@ -17,6 +17,8 @@ import {
 
 // To convert a video to a sequence of images you can use ffmpeg:
 //      ffmpeg -i "airpods.mp4" "frames/%04d.jpg"
+// To convert and resize for mobile (crop in the center):
+//      ffmpeg -i "video.mp4" -vf "crop=w=ih/2:h=ih:x=(iw/2)-(ow/2):y=0" "mobile/%04d.jpg"
 
 interface ImageSequenceProps {
     progress: MotionValue<number>
