@@ -25,7 +25,9 @@ export default function RootLayout({
                 <a
                     href="#therapists-section"
                     type="button"
-                    className="bg-white/50 fixed left-4 top-4 px-4 py-2 rounded-md flex gap-3 justify-center items-center"
+                    className="bg-white/50 fixed left-4 top-4 px-4 py-2 rounded-md flex gap-3 justify-center items-center z-20 overflow-hidden
+                    after:absolute after:inset-0 after:-z-10 after:bg-yellow-50 after:scale-x-0 after:scale-y-100 after:transition-transform after:origin-left 
+                    after:rounded-tr-full after:rounded-br-full hover:after:scale-x-100 hover:after:rounded-md"
                 >
                     <BiSolidPhoneCall />
                     <span className="text-sm font-bold">צור קשר</span>

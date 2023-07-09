@@ -24,7 +24,7 @@ export default function TherapistsSection() {
                         phone="050-588-0100"
                     />
                     <Therapist
-                        name="אורלי כהן"
+                        name="אורלי חיה"
                         desc={'למידה מותאמת עבור ילדים עם קושי בלמידה'}
                         phone="050-588-0100"
                     />

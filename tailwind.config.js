@@ -22,7 +22,7 @@ module.exports = {
                     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
             },
             animation: {
-                'show-up': 'show-up 10s linear 1',
+                'show-up': 'show-up 5s ease-in',
             },
         },
     },
