@@ -17,9 +17,9 @@ export default function WelcomeSection() {
                         <h1
                             className={`${notoSans.className} text-4xl md:text-9xl text-center tracking-widest`}
                         >
-                            <span>מכון</span>{' '}
+                            <span>מרכז</span>{' '}
                             <span className={`${solitreo.className}`}>
-                                איכות
+                                מחשבה
                             </span>
                         </h1>
                     </div>
