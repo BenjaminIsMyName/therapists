@@ -6,7 +6,7 @@ import { BiSolidPhoneCall } from 'react-icons/bi'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-    title: 'מכון איכות',
+    title: 'מרכז מחשבה',
     description:
         'טיפול CBT קוגנטיבי-התנהגותי ושיטות פורצות דרך ייחודיות ברוח היהדות שיתנו לכם מענה למגוון בעיות',
 }
